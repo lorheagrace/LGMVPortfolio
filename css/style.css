@@ -5337,3 +5337,93 @@ body.memory-win-open {
         align-items: center;
     }
 }
+
+
+/* ---------- HERO: AVAILABLE FOR WORK STATUS ---------- */
+
+.availability-wrap {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 22px;
+}
+
+.availability-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 18px;
+    border-radius: 50px;
+    background: rgba(46, 204, 113, 0.08);
+    border: 1px solid rgba(46, 204, 113, 0.28);
+    backdrop-filter: blur(10px);
+}
+
+.availability-dot {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #2ecc71;
+    box-shadow: 0 0 8px 2px rgba(46, 204, 113, 0.8);
+    animation: availabilityFlicker 2.2s ease-in-out infinite;
+}
+
+/* expanding ring behind the dot */
+.availability-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid #2ecc71;
+    animation: availabilityRing 2.2s ease-out infinite;
+}
+
+.availability-text {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #8be9b0;
+}
+
+@keyframes availabilityFlicker {
+    0%, 100% { opacity: 1;    box-shadow: 0 0 8px 2px rgba(46, 204, 113, 0.85); }
+    45%      { opacity: 0.55; box-shadow: 0 0 3px 1px rgba(46, 204, 113, 0.35); }
+    55%      { opacity: 1;    box-shadow: 0 0 10px 3px rgba(46, 204, 113, 0.95); }
+    70%      { opacity: 0.7;  box-shadow: 0 0 5px 1px rgba(46, 204, 113, 0.5); }
+}
+
+@keyframes availabilityRing {
+    0%   { transform: scale(1);   opacity: 0.7; }
+    100% { transform: scale(3.2); opacity: 0; }
+}
+
+@media (max-width: 900px) {
+    .availability-wrap { justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .availability-dot,
+    .availability-dot::after { animation: none; }
+}
+
+
+/* ---------- CONTACT: CENTERED LV LOGO ---------- */
+
+.contact-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+}
+
+.contact-logo img {
+    width: 90px;
+    height: auto;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+}
+
+@media (max-width: 600px) {
+    .contact-logo { margin-top: 40px; }
+    .contact-logo img { width: 70px; }
+}
