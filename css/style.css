@@ -5427,3 +5427,9 @@ body.memory-win-open {
     .contact-logo { margin-top: 40px; }
     .contact-logo img { width: 70px; }
 }
+
+@media (max-width: 900px) {
+    .hero-image-container {
+        order: -1;
+    }
+}
